@@ -7,3 +7,4 @@ node_modules/
 .env.production.local
 .DS_Store
 *.tsbuildinfo
+mcp-config.json

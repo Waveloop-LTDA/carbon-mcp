@@ -58,37 +58,62 @@ Um servidor MCP (Model Context Protocol) local que expõe de forma estruturada a
 - `npm run start` - Executa a versão compilada
 - `npm run generate` - Gera dados de componentes e assets
 - `npm run refresh` - Regenera dados e recompila
+- `npm run mcp-config` - **Configura automaticamente o servidor MCP no Cursor**
 
 ## 🔧 Configuração no Cursor
 
-1. **Crie o diretório `.cursor` no seu projeto:**
-   ```bash
-   mkdir -p .cursor
-   ```
+### ⚡ Configuração Automática (Recomendado)
 
-2. **Adicione a configuração no arquivo `.cursor/mcp.json`:**
-   ```json
-   {
-     "mcpServers": {
-       "carbon-mcp": {
-         "command": "node",
-         "args": ["<ABSOLUTE_PATH>/dist/index.js"],
-         "env": {
-           "CARBON_DB": "<ABSOLUTE_PATH>/data/components.json",
-           "CARBON_TOKENS": "<ABSOLUTE_PATH>/data/tokens.json",
-           "CARBON_ICONS": "<ABSOLUTE_PATH>/data/icons.json",
-           "CARBON_PICTOS": "<ABSOLUTE_PATH>/data/pictograms.json"
-         }
-       }
-     }
-   }
-   ```
+Execute o comando para configurar automaticamente o servidor MCP no Cursor:
 
-3. **Substitua `<ABSOLUTE_PATH>` pelo caminho absoluto para o diretório do projeto.**
+```bash
+npm run mcp-config
+```
 
-4. **Reinicie o Cursor** para carregar o servidor MCP.
+Este comando irá:
+- ✅ **Detectar automaticamente** o sistema operacional (Windows, macOS, Linux)
+- ✅ **Encontrar o arquivo** `mcp.json` do Cursor
+- ✅ **Adicionar/atualizar** apenas o servidor `carbon-mcp`
+- ✅ **Preservar** outros servidores MCP existentes
+- ✅ **Usar caminhos absolutos** corretos
+- ✅ **Evitar duplicações** - só atualiza se necessário
 
-> **Exemplo de caminho absoluto**: `/Users/seu-usuario/projetos/carbon-mcp-server`
+**Caminhos suportados:**
+- **macOS:** `/Users/username/.cursor/mcp.json`
+- **Windows:** `C:\Users\username\.cursor\mcp.json`
+- **Linux:** `/home/username/.cursor/mcp.json`
+
+### 📋 Configuração Manual (Alternativa)
+
+Se preferir configurar manualmente, adicione ao arquivo `mcp.json` do Cursor:
+
+```json
+{
+  "mcpServers": {
+    "carbon-mcp": {
+      "command": "node",
+      "args": ["<ABSOLUTE_PATH>/dist/index.js"],
+      "env": {
+        "CARBON_DB": "<ABSOLUTE_PATH>/data/components.json",
+        "CARBON_TOKENS": "<ABSOLUTE_PATH>/data/tokens.json",
+        "CARBON_ICONS": "<ABSOLUTE_PATH>/data/icons.json",
+        "CARBON_PICTOS": "<ABSOLUTE_PATH>/data/pictograms.json"
+      }
+    }
+  }
+}
+```
+
+> **Substitua `<ABSOLUTE_PATH>` pelo caminho absoluto do projeto**
+
+### ✨ Vantagens da Configuração Automática
+
+- **🚀 Zero configuração manual** - Um comando configura tudo
+- **🔍 Detecção inteligente** - Encontra automaticamente o arquivo do Cursor
+- **🛡️ Preserva configurações** - Não sobrescreve outros servidores MCP
+- **⚡ Atualização inteligente** - Só modifica se necessário
+- **🌍 Multiplataforma** - Funciona em Windows, macOS e Linux
+- **📝 Logs detalhados** - Mostra exatamente o que está fazendo
 
 ## 🎯 Tools Disponíveis
 
@@ -174,10 +199,16 @@ Após executar `npm run generate`, você terá acesso a:
 
 ## 🔧 Troubleshooting
 
+### Problema: Script `mcp-config` não encontra o arquivo do Cursor
+- **Windows:** Verifique se o arquivo existe em `C:\Users\seu-usuario\.cursor\mcp.json`
+- **macOS:** Verifique se o arquivo existe em `/Users/seu-usuario/.cursor/mcp.json`
+- **Linux:** Verifique se o arquivo existe em `/home/seu-usuario/.cursor/mcp.json`
+- Se não existir, crie o diretório: `mkdir -p ~/.cursor` e execute novamente
+
 ### Problema: Servidor não inicia
 - Verifique se executou `npm run generate` e `npm run build`
 - Confirme se os arquivos em `data/` existem
-- Verifique se o caminho absoluto no `.cursor/mcp.json` está correto
+- Execute `npm run mcp-config` para verificar/atualizar a configuração
 
 ### Problema: Dados não carregam
 - Execute `npm run refresh` para regenerar os dados
@@ -188,6 +219,11 @@ Após executar `npm run generate`, você terá acesso a:
 - Se não houver metadados, usa fallback por varredura de diretórios
 - Execute `npm run refresh` se houver problemas
 
+### Problema: Configuração não é aplicada
+- Reinicie o Cursor completamente após executar `npm run mcp-config`
+- Verifique se o arquivo `mcp.json` foi atualizado corretamente
+- Execute `npm run mcp-config` novamente para verificar o status
+
 ## 📁 Estrutura do Projeto
 
 ```
@@ -196,7 +232,8 @@ carbon-mcp-server/
 │   └── index.ts              # Servidor MCP principal
 ├── scripts/
 │   ├── generate-components-json.ts  # Gera dados de componentes
-│   └── scan-assets.ts              # Gera tokens, ícones e pictogramas
+│   ├── scan-assets.ts              # Gera tokens, ícones e pictogramas
+│   └── generate-mcp-config.ts      # Configura automaticamente o MCP no Cursor
 ├── seed/
 │   └── carbon-seed.json      # Dados curados de componentes
 ├── data/
@@ -207,8 +244,7 @@ carbon-mcp-server/
 ├── dist/
 │   ├── index.js             # Servidor compilado
 │   └── index.d.ts           # Definições TypeScript
-├── .cursor/
-│   └── mcp.json             # Configuração do Cursor
+├── mcp-config.json          # Configuração standalone gerada
 ├── package.json
 ├── tsconfig.json
 ├── .gitignore
@@ -253,12 +289,13 @@ npm run generate
 # Compile o projeto
 npm run build
 
-# Configure o Cursor (copie o JSON de configuração acima)
-mkdir -p .cursor
-# Cole o JSON no arquivo .cursor/mcp.json
+# Configure automaticamente no Cursor
+npm run mcp-config
 
 # Reinicie o Cursor e teste!
 ```
+
+> **🎉 Pronto!** O servidor MCP estará disponível no Cursor após reiniciar.
 
 ## 📄 Licença
 

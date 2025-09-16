@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "carbon-mcp": {
+      "command": "node",
+      "args": [
+        "/Users/jhonnatthan/Documents/workspace/React/carbon-mcp-server/dist/index.js"
+      ],
+      "env": {
+        "CARBON_DB": "/Users/jhonnatthan/Documents/workspace/React/carbon-mcp-server/data/components.json",
+        "CARBON_TOKENS": "/Users/jhonnatthan/Documents/workspace/React/carbon-mcp-server/data/tokens.json",
+        "CARBON_ICONS": "/Users/jhonnatthan/Documents/workspace/React/carbon-mcp-server/data/icons.json",
+        "CARBON_PICTOS": "/Users/jhonnatthan/Documents/workspace/React/carbon-mcp-server/data/pictograms.json"
+      }
+    }
+  }
+}

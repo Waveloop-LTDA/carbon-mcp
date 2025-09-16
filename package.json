@@ -11,7 +11,8 @@
     "start": "node dist/index.js",
     "dev": "tsx src/index.ts",
     "generate": "tsx scripts/generate-components-json.ts && tsx scripts/scan-assets.ts",
-    "refresh": "npm run generate && npm run build"
+    "refresh": "npm run generate && npm run build",
+    "mcp-config": "tsx scripts/generate-mcp-config.ts"
   },
   "dependencies": {
     "@carbon/colors": "^11.39.0",
