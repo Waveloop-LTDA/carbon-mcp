@@ -19,6 +19,13 @@ Um servidor MCP (Model Context Protocol) local que expõe de forma estruturada a
    npm run build
    ```
 
+4. **Teste o servidor:**
+   ```bash
+   npm run start
+   ```
+
+> **Nota**: O comando `npm run generate` pode levar alguns minutos na primeira execução, pois precisa processar milhares de ícones e tokens do Carbon Design System.
+
 ## 📦 Pacotes Incluídos
 
 ### Principais (React)
@@ -54,26 +61,34 @@ Um servidor MCP (Model Context Protocol) local que expõe de forma estruturada a
 
 ## 🔧 Configuração no Cursor
 
-Adicione a seguinte configuração no arquivo `.cursor/mcp.json`:
+1. **Crie o diretório `.cursor` no seu projeto:**
+   ```bash
+   mkdir -p .cursor
+   ```
 
-```json
-{
-  "mcpServers": {
-    "carbon-mcp": {
-      "command": "node",
-      "args": ["<ABSOLUTE_PATH>/dist/index.js"],
-      "env": {
-        "CARBON_DB": "<ABSOLUTE_PATH>/data/components.json",
-        "CARBON_TOKENS": "<ABSOLUTE_PATH>/data/tokens.json",
-        "CARBON_ICONS": "<ABSOLUTE_PATH>/data/icons.json",
-        "CARBON_PICTOS": "<ABSOLUTE_PATH>/data/pictograms.json"
-      }
-    }
-  }
-}
-```
+2. **Adicione a configuração no arquivo `.cursor/mcp.json`:**
+   ```json
+   {
+     "mcpServers": {
+       "carbon-mcp": {
+         "command": "node",
+         "args": ["<ABSOLUTE_PATH>/dist/index.js"],
+         "env": {
+           "CARBON_DB": "<ABSOLUTE_PATH>/data/components.json",
+           "CARBON_TOKENS": "<ABSOLUTE_PATH>/data/tokens.json",
+           "CARBON_ICONS": "<ABSOLUTE_PATH>/data/icons.json",
+           "CARBON_PICTOS": "<ABSOLUTE_PATH>/data/pictograms.json"
+         }
+       }
+     }
+   }
+   ```
 
-Substitua `<ABSOLUTE_PATH>` pelo caminho absoluto para o diretório do projeto.
+3. **Substitua `<ABSOLUTE_PATH>` pelo caminho absoluto para o diretório do projeto.**
+
+4. **Reinicie o Cursor** para carregar o servidor MCP.
+
+> **Exemplo de caminho absoluto**: `/Users/seu-usuario/projetos/carbon-mcp-server`
 
 ## 🎯 Tools Disponíveis
 
@@ -125,13 +140,17 @@ carbon.props { "name": "DataTable" }
 ### Sugerir componente por intenção
 ```
 carbon.suggest { "intent": "preciso de um botão para salvar dados" }
+carbon.suggest { "intent": "tabela com dados ordenáveis" }
+carbon.suggest { "intent": "formulário de login" }
 ```
 
 ### Buscar ícones e pictogramas
 ```
 carbon.icons.search { "query": "download" }
 carbon.icons.search { "query": "user", "category": "User" }
+carbon.icons.search { "query": "arrow", "size": 16 }
 carbon.pictograms.search { "query": "cloud" }
+carbon.pictograms.search { "query": "ai", "category": "AI & Technology" }
 ```
 
 ### Obter tokens do Design System
@@ -143,6 +162,31 @@ carbon.tokens
 ```
 carbon.refresh
 ```
+
+## 📊 Dados Disponíveis
+
+Após executar `npm run generate`, você terá acesso a:
+
+- **14 componentes** com props tipadas e documentação completa
+- **2.510+ ícones** indexados e categorizados
+- **6 categorias de tokens**: cores, temas, tipografia, layout, motion, grid
+- **0 pictogramas** (metadados não disponíveis, mas sistema preparado)
+
+## 🔧 Troubleshooting
+
+### Problema: Servidor não inicia
+- Verifique se executou `npm run generate` e `npm run build`
+- Confirme se os arquivos em `data/` existem
+- Verifique se o caminho absoluto no `.cursor/mcp.json` está correto
+
+### Problema: Dados não carregam
+- Execute `npm run refresh` para regenerar os dados
+- Verifique se os pacotes do Carbon estão instalados em `node_modules/`
+
+### Problema: Ícones não aparecem
+- O sistema usa metadados do `@carbon/icons` quando disponível
+- Se não houver metadados, usa fallback por varredura de diretórios
+- Execute `npm run refresh` se houver problemas
 
 ## 📁 Estrutura do Projeto
 
@@ -156,12 +200,18 @@ carbon-mcp-server/
 ├── seed/
 │   └── carbon-seed.json      # Dados curados de componentes
 ├── data/
-│   ├── components.json       # Dados gerados de componentes
-│   ├── tokens.json          # Tokens do Design System
-│   ├── icons.json           # Índice de ícones
-│   └── pictograms.json      # Índice de pictogramas
+│   ├── components.json       # Dados gerados de componentes (19KB)
+│   ├── tokens.json          # Tokens do Design System (516KB)
+│   ├── icons.json           # Índice de ícones (312KB)
+│   └── pictograms.json      # Índice de pictogramas (2B)
+├── dist/
+│   ├── index.js             # Servidor compilado
+│   └── index.d.ts           # Definições TypeScript
+├── .cursor/
+│   └── mcp.json             # Configuração do Cursor
 ├── package.json
 ├── tsconfig.json
+├── .gitignore
 └── README.md
 ```
 
@@ -186,6 +236,34 @@ carbon-mcp-server/
 
 Este projeto segue as especificações do Carbon Design System e está limitado aos pacotes oficiais sob o escopo `@carbon`. Não inclui pacotes legados como `carbon-components*`.
 
+## 🚀 Quick Start
+
+Para começar rapidamente:
+
+```bash
+# Clone ou baixe o projeto
+cd carbon-mcp-server
+
+# Instale dependências
+npm install
+
+# Gere dados (pode levar alguns minutos)
+npm run generate
+
+# Compile o projeto
+npm run build
+
+# Configure o Cursor (copie o JSON de configuração acima)
+mkdir -p .cursor
+# Cole o JSON no arquivo .cursor/mcp.json
+
+# Reinicie o Cursor e teste!
+```
+
 ## 📄 Licença
 
 Este projeto é privado e segue as licenças dos pacotes do Carbon Design System utilizados.
+
+---
+
+**Desenvolvido para integração com Cursor IDE e Carbon Design System** 🎯
