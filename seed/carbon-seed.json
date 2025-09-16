@@ -1,0 +1,156 @@
+{
+  "Button": {
+    "description": "Botão interativo para ações do usuário",
+    "whenToUse": "Use para ações primárias, secundárias, perigosas ou ghost. Ideal para formulários, modais e navegação.",
+    "examples": [
+      "Botão primário para salvar formulário",
+      "Botão secundário para cancelar ação",
+      "Botão ghost para ações menos importantes",
+      "Botão de perigo para deletar itens"
+    ],
+    "category": "Form"
+  },
+  "Modal": {
+    "description": "Overlay modal para conteúdo focado e interações importantes",
+    "whenToUse": "Use para confirmações, formulários complexos, visualização de detalhes ou qualquer conteúdo que precise de atenção focada.",
+    "examples": [
+      "Confirmação de exclusão",
+      "Formulário de edição",
+      "Visualização de imagem em tamanho grande",
+      "Configurações avançadas"
+    ],
+    "category": "Overlay"
+  },
+  "DataTable": {
+    "description": "Tabela de dados com funcionalidades avançadas de ordenação, filtros e paginação",
+    "whenToUse": "Use para exibir grandes volumes de dados estruturados com capacidade de interação e análise.",
+    "examples": [
+      "Lista de usuários com ordenação",
+      "Relatórios financeiros com filtros",
+      "Catálogo de produtos com paginação",
+      "Logs de sistema com busca"
+    ],
+    "category": "Data Display"
+  },
+  "TextInput": {
+    "description": "Campo de entrada de texto com validação e estados visuais",
+    "whenToUse": "Use para capturar texto simples, emails, senhas ou qualquer entrada textual do usuário.",
+    "examples": [
+      "Campo de nome em formulário",
+      "Input de email com validação",
+      "Campo de senha com toggle de visibilidade",
+      "Busca com placeholder"
+    ],
+    "category": "Form"
+  },
+  "Select": {
+    "description": "Lista suspensa para seleção de opções",
+    "whenToUse": "Use quando há múltiplas opções e o espaço é limitado. Ideal para seleções de categoria, status ou configurações.",
+    "examples": [
+      "Seleção de país/estado",
+      "Filtro por categoria",
+      "Seleção de status de pedido",
+      "Configurações de tema"
+    ],
+    "category": "Form"
+  },
+  "Checkbox": {
+    "description": "Caixa de seleção para opções binárias ou múltiplas",
+    "whenToUse": "Use para seleções múltiplas, aceitar termos, ou opções que podem ser habilitadas/desabilitadas.",
+    "examples": [
+      "Aceitar termos e condições",
+      "Seleção múltipla de itens",
+      "Configurações de notificação",
+      "Filtros de categoria"
+    ],
+    "category": "Form"
+  },
+  "RadioButton": {
+    "description": "Botão de rádio para seleção única entre opções mutuamente exclusivas",
+    "whenToUse": "Use quando o usuário deve escolher apenas uma opção entre várias alternativas.",
+    "examples": [
+      "Seleção de método de pagamento",
+      "Escolha de plano de assinatura",
+      "Configuração de privacidade",
+      "Seleção de tamanho de produto"
+    ],
+    "category": "Form"
+  },
+  "Card": {
+    "description": "Container visual para agrupar conteúdo relacionado",
+    "whenToUse": "Use para organizar informações em seções distintas, criar layouts de dashboard ou destacar conteúdo específico.",
+    "examples": [
+      "Card de produto em e-commerce",
+      "Resumo de estatísticas",
+      "Preview de artigo",
+      "Configurações agrupadas"
+    ],
+    "category": "Layout"
+  },
+  "Tabs": {
+    "description": "Navegação por abas para organizar conteúdo em seções",
+    "whenToUse": "Use quando há múltiplas seções de conteúdo que podem ser alternadas sem recarregar a página.",
+    "examples": [
+      "Perfil do usuário (dados pessoais, configurações, histórico)",
+      "Dashboard com diferentes métricas",
+      "Formulário multi-etapas",
+      "Documentação com seções"
+    ],
+    "category": "Navigation"
+  },
+  "Accordion": {
+    "description": "Lista expansível para organizar conteúdo em seções colapsáveis",
+    "whenToUse": "Use para FAQ, conteúdo hierárquico ou quando você quer economizar espaço vertical.",
+    "examples": [
+      "FAQ com perguntas e respostas",
+      "Menu de navegação colapsável",
+      "Configurações avançadas",
+      "Histórico de transações"
+    ],
+    "category": "Layout"
+  },
+  "Toast": {
+    "description": "Notificação temporária para feedback de ações do usuário",
+    "whenToUse": "Use para confirmar ações, mostrar erros, sucessos ou informações importantes que não requerem interação.",
+    "examples": [
+      "Confirmação de salvamento",
+      "Erro de validação de formulário",
+      "Notificação de nova mensagem",
+      "Status de sincronização"
+    ],
+    "category": "Feedback"
+  },
+  "Loading": {
+    "description": "Indicador visual de carregamento para operações assíncronas",
+    "whenToUse": "Use durante operações que levam tempo para completar, como carregamento de dados ou processamento.",
+    "examples": [
+      "Carregamento de lista de dados",
+      "Upload de arquivo",
+      "Processamento de pagamento",
+      "Sincronização de dados"
+    ],
+    "category": "Feedback"
+  },
+  "Breadcrumb": {
+    "description": "Navegação hierárquica para mostrar localização atual",
+    "whenToUse": "Use em sites com estrutura hierárquica profunda para ajudar na navegação e orientação do usuário.",
+    "examples": [
+      "E-commerce: Home > Categoria > Produto",
+      "Documentação: Guia > Seção > Página",
+      "Sistema de arquivos: Pasta > Subpasta > Arquivo",
+      "Configurações: Geral > Segurança > Senhas"
+    ],
+    "category": "Navigation"
+  },
+  "Pagination": {
+    "description": "Controles de navegação para grandes conjuntos de dados paginados",
+    "whenToUse": "Use quando há muitos itens para exibir de uma vez, permitindo navegação por páginas.",
+    "examples": [
+      "Lista de produtos em e-commerce",
+      "Resultados de busca",
+      "Tabela de dados grande",
+      "Galeria de imagens"
+    ],
+    "category": "Navigation"
+  }
+}

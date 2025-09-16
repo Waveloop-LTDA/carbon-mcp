@@ -1,0 +1,686 @@
+[
+  {
+    "name": "Accordion",
+    "description": "Lista expansível para organizar conteúdo em seções colapsáveis",
+    "whenToUse": "Use para FAQ, conteúdo hierárquico ou quando você quer economizar espaço vertical.",
+    "examples": [
+      "FAQ com perguntas e respostas",
+      "Menu de navegação colapsável",
+      "Configurações avançadas",
+      "Histórico de transações"
+    ],
+    "category": "Layout",
+    "props": [
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false,
+        "description": "Conteúdo filho do componente"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Classe CSS personalizada"
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "description": "Identificador único do elemento"
+      },
+      {
+        "name": "onClick",
+        "type": "() => void",
+        "required": false,
+        "description": "Função chamada quando o elemento é clicado"
+      }
+    ],
+    "importPath": "@carbon/react/Accordion"
+  },
+  {
+    "name": "Breadcrumb",
+    "description": "Navegação hierárquica para mostrar localização atual",
+    "whenToUse": "Use em sites com estrutura hierárquica profunda para ajudar na navegação e orientação do usuário.",
+    "examples": [
+      "E-commerce: Home > Categoria > Produto",
+      "Documentação: Guia > Seção > Página",
+      "Sistema de arquivos: Pasta > Subpasta > Arquivo",
+      "Configurações: Geral > Segurança > Senhas"
+    ],
+    "category": "Navigation",
+    "props": [
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false,
+        "description": "Conteúdo filho do componente"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Classe CSS personalizada"
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "description": "Identificador único do elemento"
+      },
+      {
+        "name": "onClick",
+        "type": "() => void",
+        "required": false,
+        "description": "Função chamada quando o elemento é clicado"
+      }
+    ],
+    "importPath": "@carbon/react/Breadcrumb"
+  },
+  {
+    "name": "Button",
+    "description": "Botão interativo para ações do usuário",
+    "whenToUse": "Use para ações primárias, secundárias, perigosas ou ghost. Ideal para formulários, modais e navegação.",
+    "examples": [
+      "Botão primário para salvar formulário",
+      "Botão secundário para cancelar ação",
+      "Botão ghost para ações menos importantes",
+      "Botão de perigo para deletar itens"
+    ],
+    "category": "Form",
+    "props": [
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false,
+        "description": "Conteúdo filho do componente"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Classe CSS personalizada"
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "description": "Identificador único do elemento"
+      },
+      {
+        "name": "onClick",
+        "type": "() => void",
+        "required": false,
+        "description": "Função chamada quando o elemento é clicado"
+      },
+      {
+        "name": "kind",
+        "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"ghost\" | \"danger\"",
+        "required": false,
+        "description": "Tipo visual do botão"
+      },
+      {
+        "name": "size",
+        "type": "\"sm\" | \"md\" | \"lg\"",
+        "required": false,
+        "description": "Tamanho do botão"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "description": "Se o botão está desabilitado"
+      }
+    ],
+    "importPath": "@carbon/react/Button"
+  },
+  {
+    "name": "Card",
+    "description": "Container visual para agrupar conteúdo relacionado",
+    "whenToUse": "Use para organizar informações em seções distintas, criar layouts de dashboard ou destacar conteúdo específico.",
+    "examples": [
+      "Card de produto em e-commerce",
+      "Resumo de estatísticas",
+      "Preview de artigo",
+      "Configurações agrupadas"
+    ],
+    "category": "Layout",
+    "props": [
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false,
+        "description": "Conteúdo filho do componente"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Classe CSS personalizada"
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "description": "Identificador único do elemento"
+      },
+      {
+        "name": "onClick",
+        "type": "() => void",
+        "required": false,
+        "description": "Função chamada quando o elemento é clicado"
+      }
+    ],
+    "importPath": "@carbon/react/Card"
+  },
+  {
+    "name": "Checkbox",
+    "description": "Caixa de seleção para opções binárias ou múltiplas",
+    "whenToUse": "Use para seleções múltiplas, aceitar termos, ou opções que podem ser habilitadas/desabilitadas.",
+    "examples": [
+      "Aceitar termos e condições",
+      "Seleção múltipla de itens",
+      "Configurações de notificação",
+      "Filtros de categoria"
+    ],
+    "category": "Form",
+    "props": [
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false,
+        "description": "Conteúdo filho do componente"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Classe CSS personalizada"
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "description": "Identificador único do elemento"
+      },
+      {
+        "name": "onClick",
+        "type": "() => void",
+        "required": false,
+        "description": "Função chamada quando o elemento é clicado"
+      },
+      {
+        "name": "checked",
+        "type": "boolean",
+        "required": false,
+        "description": "Se o checkbox está marcado"
+      },
+      {
+        "name": "onChange",
+        "type": "(checked: boolean) => void",
+        "required": false,
+        "description": "Função chamada quando o estado muda"
+      },
+      {
+        "name": "labelText",
+        "type": "string",
+        "required": false,
+        "description": "Texto do label"
+      }
+    ],
+    "importPath": "@carbon/react/Checkbox"
+  },
+  {
+    "name": "DataTable",
+    "description": "Tabela de dados com funcionalidades avançadas de ordenação, filtros e paginação",
+    "whenToUse": "Use para exibir grandes volumes de dados estruturados com capacidade de interação e análise.",
+    "examples": [
+      "Lista de usuários com ordenação",
+      "Relatórios financeiros com filtros",
+      "Catálogo de produtos com paginação",
+      "Logs de sistema com busca"
+    ],
+    "category": "Data Display",
+    "props": [
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false,
+        "description": "Conteúdo filho do componente"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Classe CSS personalizada"
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "description": "Identificador único do elemento"
+      },
+      {
+        "name": "onClick",
+        "type": "() => void",
+        "required": false,
+        "description": "Função chamada quando o elemento é clicado"
+      },
+      {
+        "name": "rows",
+        "type": "Array<any>",
+        "required": true,
+        "description": "Dados da tabela"
+      },
+      {
+        "name": "headers",
+        "type": "Array<{key: string, header: string}>",
+        "required": true,
+        "description": "Cabeçalhos da tabela"
+      },
+      {
+        "name": "sortable",
+        "type": "boolean",
+        "required": false,
+        "description": "Se a tabela é ordenável"
+      }
+    ],
+    "importPath": "@carbon/react/DataTable"
+  },
+  {
+    "name": "Loading",
+    "description": "Indicador visual de carregamento para operações assíncronas",
+    "whenToUse": "Use durante operações que levam tempo para completar, como carregamento de dados ou processamento.",
+    "examples": [
+      "Carregamento de lista de dados",
+      "Upload de arquivo",
+      "Processamento de pagamento",
+      "Sincronização de dados"
+    ],
+    "category": "Feedback",
+    "props": [
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false,
+        "description": "Conteúdo filho do componente"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Classe CSS personalizada"
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "description": "Identificador único do elemento"
+      },
+      {
+        "name": "onClick",
+        "type": "() => void",
+        "required": false,
+        "description": "Função chamada quando o elemento é clicado"
+      }
+    ],
+    "importPath": "@carbon/react/Loading"
+  },
+  {
+    "name": "Modal",
+    "description": "Overlay modal para conteúdo focado e interações importantes",
+    "whenToUse": "Use para confirmações, formulários complexos, visualização de detalhes ou qualquer conteúdo que precise de atenção focada.",
+    "examples": [
+      "Confirmação de exclusão",
+      "Formulário de edição",
+      "Visualização de imagem em tamanho grande",
+      "Configurações avançadas"
+    ],
+    "category": "Overlay",
+    "props": [
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false,
+        "description": "Conteúdo filho do componente"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Classe CSS personalizada"
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "description": "Identificador único do elemento"
+      },
+      {
+        "name": "onClick",
+        "type": "() => void",
+        "required": false,
+        "description": "Função chamada quando o elemento é clicado"
+      },
+      {
+        "name": "open",
+        "type": "boolean",
+        "required": true,
+        "description": "Se o modal está aberto"
+      },
+      {
+        "name": "onRequestClose",
+        "type": "() => void",
+        "required": true,
+        "description": "Função chamada para fechar o modal"
+      },
+      {
+        "name": "modalHeading",
+        "type": "string",
+        "required": false,
+        "description": "Título do modal"
+      }
+    ],
+    "importPath": "@carbon/react/Modal"
+  },
+  {
+    "name": "Pagination",
+    "description": "Controles de navegação para grandes conjuntos de dados paginados",
+    "whenToUse": "Use quando há muitos itens para exibir de uma vez, permitindo navegação por páginas.",
+    "examples": [
+      "Lista de produtos em e-commerce",
+      "Resultados de busca",
+      "Tabela de dados grande",
+      "Galeria de imagens"
+    ],
+    "category": "Navigation",
+    "props": [
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false,
+        "description": "Conteúdo filho do componente"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Classe CSS personalizada"
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "description": "Identificador único do elemento"
+      },
+      {
+        "name": "onClick",
+        "type": "() => void",
+        "required": false,
+        "description": "Função chamada quando o elemento é clicado"
+      }
+    ],
+    "importPath": "@carbon/react/Pagination"
+  },
+  {
+    "name": "RadioButton",
+    "description": "Botão de rádio para seleção única entre opções mutuamente exclusivas",
+    "whenToUse": "Use quando o usuário deve escolher apenas uma opção entre várias alternativas.",
+    "examples": [
+      "Seleção de método de pagamento",
+      "Escolha de plano de assinatura",
+      "Configuração de privacidade",
+      "Seleção de tamanho de produto"
+    ],
+    "category": "Form",
+    "props": [
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false,
+        "description": "Conteúdo filho do componente"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Classe CSS personalizada"
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "description": "Identificador único do elemento"
+      },
+      {
+        "name": "onClick",
+        "type": "() => void",
+        "required": false,
+        "description": "Função chamada quando o elemento é clicado"
+      },
+      {
+        "name": "checked",
+        "type": "boolean",
+        "required": false,
+        "description": "Se o radio está selecionado"
+      },
+      {
+        "name": "onChange",
+        "type": "(checked: boolean) => void",
+        "required": false,
+        "description": "Função chamada quando o estado muda"
+      },
+      {
+        "name": "labelText",
+        "type": "string",
+        "required": false,
+        "description": "Texto do label"
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "required": true,
+        "description": "Nome do grupo de radio buttons"
+      }
+    ],
+    "importPath": "@carbon/react/RadioButton"
+  },
+  {
+    "name": "Select",
+    "description": "Lista suspensa para seleção de opções",
+    "whenToUse": "Use quando há múltiplas opções e o espaço é limitado. Ideal para seleções de categoria, status ou configurações.",
+    "examples": [
+      "Seleção de país/estado",
+      "Filtro por categoria",
+      "Seleção de status de pedido",
+      "Configurações de tema"
+    ],
+    "category": "Form",
+    "props": [
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false,
+        "description": "Conteúdo filho do componente"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Classe CSS personalizada"
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "description": "Identificador único do elemento"
+      },
+      {
+        "name": "onClick",
+        "type": "() => void",
+        "required": false,
+        "description": "Função chamada quando o elemento é clicado"
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": false,
+        "description": "Valor selecionado"
+      },
+      {
+        "name": "onChange",
+        "type": "(event: ChangeEvent<HTMLSelectElement>) => void",
+        "required": false,
+        "description": "Função chamada quando a seleção muda"
+      },
+      {
+        "name": "options",
+        "type": "Array<{value: string, text: string}>",
+        "required": true,
+        "description": "Opções disponíveis"
+      }
+    ],
+    "importPath": "@carbon/react/Select"
+  },
+  {
+    "name": "Tabs",
+    "description": "Navegação por abas para organizar conteúdo em seções",
+    "whenToUse": "Use quando há múltiplas seções de conteúdo que podem ser alternadas sem recarregar a página.",
+    "examples": [
+      "Perfil do usuário (dados pessoais, configurações, histórico)",
+      "Dashboard com diferentes métricas",
+      "Formulário multi-etapas",
+      "Documentação com seções"
+    ],
+    "category": "Navigation",
+    "props": [
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false,
+        "description": "Conteúdo filho do componente"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Classe CSS personalizada"
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "description": "Identificador único do elemento"
+      },
+      {
+        "name": "onClick",
+        "type": "() => void",
+        "required": false,
+        "description": "Função chamada quando o elemento é clicado"
+      }
+    ],
+    "importPath": "@carbon/react/Tabs"
+  },
+  {
+    "name": "TextInput",
+    "description": "Campo de entrada de texto com validação e estados visuais",
+    "whenToUse": "Use para capturar texto simples, emails, senhas ou qualquer entrada textual do usuário.",
+    "examples": [
+      "Campo de nome em formulário",
+      "Input de email com validação",
+      "Campo de senha com toggle de visibilidade",
+      "Busca com placeholder"
+    ],
+    "category": "Form",
+    "props": [
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false,
+        "description": "Conteúdo filho do componente"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Classe CSS personalizada"
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "description": "Identificador único do elemento"
+      },
+      {
+        "name": "onClick",
+        "type": "() => void",
+        "required": false,
+        "description": "Função chamada quando o elemento é clicado"
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": false,
+        "description": "Valor do input"
+      },
+      {
+        "name": "onChange",
+        "type": "(event: ChangeEvent<HTMLInputElement>) => void",
+        "required": false,
+        "description": "Função chamada quando o valor muda"
+      },
+      {
+        "name": "placeholder",
+        "type": "string",
+        "required": false,
+        "description": "Texto placeholder"
+      },
+      {
+        "name": "type",
+        "type": "string",
+        "required": false,
+        "description": "Tipo do input (text, email, password, etc.)"
+      }
+    ],
+    "importPath": "@carbon/react/TextInput"
+  },
+  {
+    "name": "Toast",
+    "description": "Notificação temporária para feedback de ações do usuário",
+    "whenToUse": "Use para confirmar ações, mostrar erros, sucessos ou informações importantes que não requerem interação.",
+    "examples": [
+      "Confirmação de salvamento",
+      "Erro de validação de formulário",
+      "Notificação de nova mensagem",
+      "Status de sincronização"
+    ],
+    "category": "Feedback",
+    "props": [
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false,
+        "description": "Conteúdo filho do componente"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Classe CSS personalizada"
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "description": "Identificador único do elemento"
+      },
+      {
+        "name": "onClick",
+        "type": "() => void",
+        "required": false,
+        "description": "Função chamada quando o elemento é clicado"
+      }
+    ],
+    "importPath": "@carbon/react/Toast"
+  }
+]

@@ -1,0 +1,44 @@
+{
+  "name": "carbon-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "carbon-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --target node18 --dts --out-dir dist",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "generate": "tsx scripts/generate-components-json.ts && tsx scripts/scan-assets.ts",
+    "refresh": "npm run generate && npm run build"
+  },
+  "dependencies": {
+    "@carbon/colors": "^11.39.0",
+    "@carbon/elements": "^11.40.0",
+    "@carbon/feature-flags": "^0.19.0",
+    "@carbon/grid": "^11.24.0",
+    "@carbon/icons": "^11.67.0",
+    "@carbon/icons-react": "^11.67.0",
+    "@carbon/layout": "^11.40.0",
+    "@carbon/motion": "^11.31.0",
+    "@carbon/pictograms": "^12.60.0",
+    "@carbon/pictograms-react": "^11.85.0",
+    "@carbon/react": "^1.91.0",
+    "@carbon/styles": "^1.89.0",
+    "@carbon/themes": "^11.40.0",
+    "@carbon/type": "^11.39.0",
+    "@carbon/utilities-react": "^0.12.0",
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "fast-glob": "^3.3.2",
+    "yaml": "^2.5.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.3",
+    "react-docgen-typescript": "^2.2.2",
+    "tsup": "^8.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.6.2"
+  }
+}
